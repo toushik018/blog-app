@@ -10,12 +10,23 @@ type Query {
 
 type Mutation {
 signup(
-    name: String!,
-    email: String!,
-    password: String!,
-    ): User
+     name: String!,
+     email: String!,
+     bio: String,
+     password: String!,
+    ): AuthPayload
+
+signin(
+     email: String!,
+     password: String!
+): AuthPayload
 
 }
+
+type AuthPayload {
+     userError: String
+    token: String
+    }
 
 type Post {
      id: ID!
