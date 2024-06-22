@@ -21,12 +21,15 @@ signin(
      password: String!
 ): AuthPayload
 
+
+     addPost(
+     title: String!, 
+     content: String!
+     ): postPayload
+
 }
 
-type AuthPayload {
-     userError: String
-    token: String
-    }
+
 
 type Post {
      id: ID!
@@ -53,5 +56,16 @@ type Profile{
      user: User!
      
      }
+
+
+     type AuthPayload {
+     userError: String
+    token: String
+    }
+
+    type postPayload{
+    userError: String
+    post: Post
+    }
 
 `;
